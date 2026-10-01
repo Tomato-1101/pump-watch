@@ -1,0 +1,205 @@
+{
+  "chains": [
+    "bsc"
+  ],
+  "dry_run": true,
+  "filters": {
+    "min_liquidity_usd": 20000,
+    "max_market_cap_usd": 500000000,
+    "min_holders": 30,
+    "size_any": {
+      "mcap": 100000,
+      "vol24h": 300000,
+      "vol5m": 30000
+    }
+  },
+  "s1": {
+    "pc1h_pct": 80,
+    "pc5m_pct": 25,
+    "min_buys_5m": 30,
+    "cooldown_h": 2
+  },
+  "s2": {
+    "min_vol5m_usd": 20000,
+    "baseline_mult": 3,
+    "baseline_from_min": 15,
+    "baseline_to_min": 75,
+    "no_baseline_vol5m_usd": 60000,
+    "cooldown_h": 2
+  },
+  "s3": {
+    "min_buys_5m": 300,
+    "min_buyers_5m": 150,
+    "buy_sell_ratio": 1.0,
+    "cooldown_h": 2
+  },
+  "s4": {
+    "window_min": 30,
+    "pct": 15,
+    "abs": 30,
+    "cooldown_h": 2
+  },
+  "s5": {
+    "min_smart": 5,
+    "window_min": 30,
+    "min_increase": 3,
+    "cooldown_h": 6
+  },
+  "s6": {
+    "window_min": 30,
+    "ratio": 2,
+    "min_visiting": 300,
+    "cooldown_h": 6
+  },
+  "m1": {
+    "ladder": [
+      250000,
+      500000,
+      1000000,
+      3000000,
+      10000000,
+      30000000,
+      100000000
+    ],
+    "max_age_days": 30
+  },
+  "m2": {
+    "ladder": [
+      3,
+      10,
+      30,
+      100
+    ]
+  },
+  "m3": {
+    "ladder": [
+      700000,
+      1000000,
+      3000000,
+      10000000,
+      30000000,
+      100000000
+    ],
+    "max_age_days": 30
+  },
+  "m4": {
+    "min_age_days": 30,
+    "min_change_24h_pct": 200,
+    "cooldown_h": 24
+  },
+  "milestone": {
+    "min_pc1h_pct": 0,
+    "min_vol5m_usd": 2000,
+    "min_buys_5m": 5
+  },
+  "yabai": {
+    "mcap": 1000000,
+    "volume": 1000000,
+    "x": 10,
+    "heat": 4
+  },
+  "notify": {
+    "immediate": {
+      "mcap": 300000,
+      "vol24h": 700000
+    },
+    "immediate_cooldown_min": 10,
+    "batch_minutes": 0,
+    "max_pending": 15,
+    "legacy": false
+  },
+  "gt": {
+    "enabled": true,
+    "max_calls_per_min": 5,
+    "min_gap_seconds": 12,
+    "block_seconds": 60,
+    "trending_duration": "5m"
+  },
+  "ds": {
+    "enabled": true,
+    "workers": 6,
+    "active_hours": 24
+  },
+  "gmgn": {
+    "enabled": true,
+    "interval_24h_every": 3
+  },
+  "snapshot_min_gap_seconds": 90,
+  "snapshot_retention_days": 2,
+  "score": {
+    "enabled": true,
+    "notify": true,
+    "gain": 1.0,
+    "kappa": 0.5,
+    "levels": {
+      "WATCH": 60,
+      "HOT": 70,
+      "STRONG": 80,
+      "EXTREME": 90
+    },
+    "cooldown_min": {
+      "WATCH": 30,
+      "HOT": 60,
+      "STRONG": 120,
+      "EXTREME": 360
+    },
+    "renotify_delta": 5,
+    "min_liquidity_usd": 20000,
+    "min_liquidity_new_usd": 10000,
+    "new_token_min": 60,
+    "fourmeme_grad_bnb": 18,
+    "log_min_score": 30,
+    "db_min_score": 40,
+    "retention_days": 14,
+    "api_chains": [
+      "robinhood",
+      "arc"
+    ],
+    "wallets_file": "wallets.txt"
+  },
+  "hot": {
+    "interval_sec": 600,
+    "api_gap_sec": 12,
+    "pulls": [
+      "swaps",
+      "volume",
+      "chg100",
+      "floor"
+    ],
+    "size": {
+      "swaps": 3000,
+      "volume_usd": 300000,
+      "holders": 300,
+      "alt_holders": 1000,
+      "alt_swaps": 1500,
+      "peak_mcap_usd": 100000,
+      "alt_volume_usd": 150000,
+      "alt_peak_mcap_usd": 300000
+    },
+    "burst": {
+      "chg24_pct": 100,
+      "big_swaps": 30000,
+      "big_chg24_pct": 20,
+      "day_range_x": 2.0,
+      "day_range_chg24_pct": 0,
+      "holder_growth": 300,
+      "holder_growth_pct": 20,
+      "holder_chg24_pct": 20
+    },
+    "confirm_passes": 2,
+    "cooldown_hours": 48,
+    "wallet_tags": [
+      "smart_degen",
+      "kol",
+      "renowned",
+      "top_renamed",
+      "top_followed"
+    ],
+    "wallet_exclude_tags": [
+      "sandwich_bot",
+      "dex_bot"
+    ],
+    "near_limit": 5,
+    "retention_days": 14
+  }
+}

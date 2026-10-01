@@ -1,0 +1,6 @@
+# Watched wallets (copy to wallets.txt, which is git-ignored).
+# One wallet per line:  0xADDRESS # Display name | @handle
+# Everything after "#" is optional. Lines that share a display name are treated
+# as the same person (their buys are summed). The addresses below are dummies.
+0x0000000000000000000000000000000000001001 # Example Trader A | @example_a
+0x0000000000000000000000000000000000001002 # Example Trader A

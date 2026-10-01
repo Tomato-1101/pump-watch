@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<!-- Example launchd job. Replace every /path/to/... and copy to ~/Library/LaunchAgents/.
+     launchd does not create the log directory: run `mkdir -p /path/to/pump-watch/logs` first. -->
+<plist version="1.0">
+<dict>
+  <key>Label</key>
+  <string>com.example.pumpwatch.digest</string>
+  <key>ProgramArguments</key>
+  <array>
+    <string>/path/to/pump-watch/run.sh</string>
+    <string>hot</string>
+    <string>digest</string>
+  </array>
+  <!-- launchd uses the machine's local time. The code buckets days in JST (UTC+9) regardless of TZ,
+       so on a machine not set to Asia/Tokyo change Hour to fire at 23:00 JST. -->
+  <key>StartCalendarInterval</key>
+  <dict>
+    <key>Hour</key>
+    <integer>23</integer>
+    <key>Minute</key>
+    <integer>0</integer>
+  </dict>
+  <key>WorkingDirectory</key>
+  <string>/path/to/pump-watch</string>
+  <!-- Optional. PUMPWATCH_TG_TOKEN / PUMPWATCH_TG_CHAT_ID / GMGN_API_KEY may also be set here;
+       without the Telegram variables the credentials are read from the macOS Keychain. -->
+  <key>EnvironmentVariables</key>
+  <dict>
+    <key>PUMPWATCH_STATE_DIR</key>
+    <string>/path/to/state/pump-watch</string>
+  </dict>
+  <key>StandardOutPath</key>
+  <string>/path/to/pump-watch/logs/digest.log</string>
+  <key>StandardErrorPath</key>
+  <string>/path/to/pump-watch/logs/digest.log</string>
+</dict>
+</plist>

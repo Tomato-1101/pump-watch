@@ -1,0 +1,19 @@
+# local state (SQLite in WAL mode)
+state.db
+state.db-*
+*.db-journal
+
+# personal settings and roster
+config.json
+config.json.tmp
+wallets.txt
+
+# python
+__pycache__/
+*.pyc
+
+# logs
+logs/
+*.log
+
+.DS_Store
